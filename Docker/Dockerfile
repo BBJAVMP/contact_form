@@ -1,0 +1,7 @@
+FROM  NODELASTET
+WORKDIR /APP
+COPY package*.json ./
+RUN NPM INSTALL
+COPY . .
+EXPOSE 8080
+CMD [ "node", "app.js"]
