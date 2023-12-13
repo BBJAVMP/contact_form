@@ -5,8 +5,8 @@ html {
 body {
     background-color: #333;
     color: rgb(255, 255, 255);
-    margin: 0; /* Remove default body margin */
-    position: relative; /* Add position relative for footer positioning */
+    margin: 0; 
+    position: relative; 
 }
 
 header {

@@ -1,0 +1,114 @@
+doctype html
+html(lang='en-US')
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='author', content='Test to build up HTML skills.')
+    |     
+    title Contact Us
+    |     
+    link(rel='icon', href='/ressources/image/test.jpeg', type='image/test-icon')
+    |     
+    link(rel='stylesheet', href='/css/main.css', type='text/css')
+  body
+    header
+      img(src='/ressources/image/test2.jpeg', alt='testing if the image of customer service works', title='test', width='1300', height='300')
+      |     
+      .header-text
+        h1 WebDevTeam Support
+        |         
+        h2 We provide a solution for all platforms
+      |     
+      nav.website-navigation-bar
+        h3 Home
+        |         
+        h3 Our products
+        |         
+        h3 Our services
+        |         
+        h3 Meet our DevTeam
+        |         
+        h3 Prices
+        |         
+        h3 Contact Us
+    h2 Contact Us
+    h3 Contact Form :
+    p
+      | In case you need to be in touch with our developer team regarding any kind of matter, please fill in the formular.
+    p
+      | Please note that if your region is 
+      abbr(title='TRY') OUT
+      |  of the supported areas, we may not be able to help you.
+    hr
+    |     
+    strong  Usual examples of contact topics :
+    |     
+    ul
+      li A bug has happened during your user experience.
+      |         
+      li You need help using the product we designed.
+      |         
+      li You need help with a product another company designed.
+      |         
+      li You would like us to custom tailor your products or design you one from scraps.
+      |         
+      li You wish to know about our others products.
+    p
+    .container
+      form(action='validate.html')
+        label(for='fname') First Name
+        |         
+        input#fname(type='text', name='firstname', placeholder='Your name..')
+        |         
+        label(for='lname') Last Name
+        |         
+        input#lname(type='text', name='lastname', placeholder='Your last name..')
+        |         
+        label(for='country') Country
+        |         
+        select#country(name='country')
+          option(value='australia') Australie
+          |             
+          option(value='canada') Canada
+          |             
+          option(value='usa') USA
+          |             
+          option(value='france') France
+          |             
+          option(value='allemagne') Allemagne
+          |             
+          option(value='roumanie') Roumanie
+        |         
+        label(for='subject') Subject
+        |         
+        textarea#subject(name='subject', placeholder='Write something..', style='height:200px')
+        |         
+        input(type='submit', value='Submit')
+    footer
+      img(src='/ressources/image/test3.jpeg', type='footer picture', alt='footer picture representing a thank you written in every language on a post-it, each one held by a hand')
+      |     
+      .footer-text
+        h3 Simplon Dev since 2023
+        |         
+        dl
+          dt From HTML to DOCKER and beyond
+          |             
+          dd
+            | We got you 
+            strong Covered!
+        |         
+        dl
+          dt We would like to thank everyone and wish you a Merry Christmas Eve!
+          |             
+          dd
+            | Enjoy Snowmen, snowballs, Christmas Java dreams, and not to forget about the New Year 
+            strong Blog!
+        |         
+        p
+          | &copy; 2023 Blind&amp;Deaf. All rights reserved. SimplonTraining
+          small &trade;
+      |     
+      .social-networks
+        a(href='facebook') Social Network 1
+        |         
+        a(href='instagram') Social Network 2
