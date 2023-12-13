@@ -1,7 +1,7 @@
-FROM  NODELASTET
-WORKDIR /APP
+FROM node:latest
+WORKDIR /app
 COPY package*.json ./
-RUN NPM INSTALL
-COPY . .
-EXPOSE 8080
-CMD [ "node", "app.js"]
+RUN npm install
+COPY ./website/ .
+EXPOSE 8000
+CMD ["node", "app.js"]
