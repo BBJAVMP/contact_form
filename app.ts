@@ -1,13 +1,12 @@
-import express from 'express';
-import path from 'path';
+
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: true }));
+app.use('/css', express.static('css'))
+app.use('/ressources', express.static('ressources'))
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'website', 'index.html'));
 });
 
 app.post('/submit', (req, res) => {
