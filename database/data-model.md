@@ -3,12 +3,12 @@
 
 ---
 
-title: Blog
+title: Ticket
 ---
 
 classDiagram
-users  <|-- blogs
-note for blogs "The pictures is a directory in serveur"
+users  <|-- tickets
+note for tickets "The pictures is a directory in server"
 
    class users{
     +int id_user (unique)*
@@ -19,11 +19,11 @@ note for blogs "The pictures is a directory in serveur"
     +Datetime date_create
    }
 
-   class blogs{
-    +int id_blog(unique)*
+   class tickets{
+    +int id_ticket(unique)*
     +int id_user
     +String title
-    +Text text_content_blog
+    +Text text_content_ticket
     +String picture
     +Datetime date_create
    }

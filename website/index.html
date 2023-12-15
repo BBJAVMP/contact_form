@@ -6,6 +6,8 @@
     <title>Contact Us</title>
     <link rel="icon" href="/ressources/image/test.jpeg" type="image/test-icon">
     <link rel="stylesheet" href="/css/main.css" type="text/css">
+    
+    
 </head>
 <body>
 
@@ -46,25 +48,86 @@
 </p>
 
 <div class="container">
-    <form action="validate.html">
+    <form id="contactForm" action="validate.html">
         <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." class="invalid-input" maxlength="50">
+        <div id="fnameError" class="error-message"></div>
+
         <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." class="invalid-input" maxlength="50">
+        <div id="lnameError" class="error-message"></div>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your email.." class="invalid-input">
+        <div id="emailError" class="error-message"></div>
+
         <label for="country">Country</label>
         <select id="country" name="country">
-            <option value="australia">Australie</option>
+            <option value="australia">Australia</option>
             <option value="canada">Canada</option>
             <option value="usa">USA</option>
             <option value="france">France</option>
-            <option value="allemagne">Allemagne</option>
-            <option value="roumanie">Roumanie</option>
+            <option value="allemagne">Germany</option>
+            <option value="roumanie">Romania</option>
         </select>
+
         <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+        <div id="subjectError" class="error-message"></div>
         <input type="submit" value="Submit">
     </form>
 </div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        const fnameInput = document.getElementById('fname');
+        const lnameInput = document.getElementById('lname');
+        const emailInput = document.getElementById('email');
+        const subjectInput = document.getElementById('subject');
+
+        if (!isValidInput(fnameInput.value, 3)) {
+            displayErrorMessage('fnameError', 'Please enter a valid first name with at least three characters.');
+            event.preventDefault();
+        } else {
+            hideErrorMessage('fnameError');
+        }
+
+        if (!isValidInput(lnameInput.value, 3)) {
+            displayErrorMessage('lnameError', 'Please enter a valid last name with at least three characters.');
+            event.preventDefault();
+        } else {
+            hideErrorMessage('lnameError');
+        }
+
+        if (!isValidEmail(emailInput.value)) {
+            displayErrorMessage('emailError', 'Please enter a valid email address.');
+            event.preventDefault();
+        } else {
+            hideErrorMessage('emailError');
+        }
+    });
+
+    function isValidInput(value, minLength) {
+        
+        return value.trim().length >= minLength;
+    }
+
+    function isValidEmail(email) {
+        
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    function displayErrorMessage(id, message) {
+        const errorElement = document.getElementById(id);
+        errorElement.innerHTML = message;
+    }
+
+    function hideErrorMessage(id) {
+        const errorElement = document.getElementById(id);
+        errorElement.innerHTML = '';
+    }
+</script>
+
 
 <footer>
     <img src="/ressources/image/test3.jpeg" type="footer picture" alt="footer picture representing a thank you written in every language on a post-it, each one held by a hand">

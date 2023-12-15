@@ -1,114 +1,153 @@
-doctype html
-html(lang='en-US')
-  head
-    meta(charset='UTF-8')
-    |     
-    meta(name='author', content='Test to build up HTML skills.')
-    |     
-    title Contact Us
-    |     
-    link(rel='icon', href='/ressources/image/test.jpeg', type='image/test-icon')
-    |     
-    link(rel='stylesheet', href='/css/main.css', type='text/css')
-  body
-    header
-      img(src='/ressources/image/test2.jpeg', alt='testing if the image of customer service works', title='test', width='1300', height='300')
-      |     
-      .header-text
-        h1 WebDevTeam Support
-        |         
-        h2 We provide a solution for all platforms
-      |     
-      nav.website-navigation-bar
-        h3 Home
-        |         
-        h3 Our products
-        |         
-        h3 Our services
-        |         
-        h3 Meet our DevTeam
-        |         
-        h3 Prices
-        |         
-        h3 Contact Us
-    h2 Contact Us
-    h3 Contact Form :
-    p
-      | In case you need to be in touch with our developer team regarding any kind of matter, please fill in the formular.
-    p
-      | Please note that if your region is 
-      abbr(title='TRY') OUT
-      |  of the supported areas, we may not be able to help you.
-    hr
-    |     
-    strong  Usual examples of contact topics :
-    |     
-    ul
-      li A bug has happened during your user experience.
-      |         
-      li You need help using the product we designed.
-      |         
-      li You need help with a product another company designed.
-      |         
-      li You would like us to custom tailor your products or design you one from scraps.
-      |         
-      li You wish to know about our others products.
-    p
-    .container
-      form(action='validate.html')
-        label(for='fname') First Name
-        |         
-        input#fname(type='text', name='firstname', placeholder='Your name..')
-        |         
-        label(for='lname') Last Name
-        |         
-        input#lname(type='text', name='lastname', placeholder='Your last name..')
-        |         
-        label(for='country') Country
-        |         
-        select#country(name='country')
-          option(value='australia') Australie
-          |             
-          option(value='canada') Canada
-          |             
-          option(value='usa') USA
-          |             
-          option(value='france') France
-          |             
-          option(value='allemagne') Allemagne
-          |             
-          option(value='roumanie') Roumanie
-        |         
-        label(for='subject') Subject
-        |         
-        textarea#subject(name='subject', placeholder='Write something..', style='height:200px')
-        |         
-        input(type='submit', value='Submit')
-    footer
-      img(src='/ressources/image/test3.jpeg', type='footer picture', alt='footer picture representing a thank you written in every language on a post-it, each one held by a hand')
-      |     
-      .footer-text
-        h3 Simplon Dev since 2023
-        |         
-        dl
-          dt From HTML to DOCKER and beyond
-          |             
-          dd
-            | We got you 
-            strong Covered!
-        |         
-        dl
-          dt We would like to thank everyone and wish you a Merry Christmas Eve!
-          |             
-          dd
-            | Enjoy Snowmen, snowballs, Christmas Java dreams, and not to forget about the New Year 
-            strong Blog!
-        |         
-        p
-          | &copy; 2023 Blind&amp;Deaf. All rights reserved. SimplonTraining
-          small &trade;
-      |     
-      .social-networks
-        a(href='facebook') Social Network 1
-        |         
-        a(href='instagram') Social Network 2
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Test to build up HTML skills.">
+    <title>Contact Us</title>
+    <link rel="icon" href="/ressources/image/test.jpeg" type="image/test-icon">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    
+    
+</head>
+<body>
+
+<header>
+    <img src="/ressources/image/test2.jpeg" alt="testing if the image of customer service works" title="test" width="1300" height="300" alt="a smiling lady with a headphone with in background several others ladies talking in headphone, focused on their tasks, and a big window on the left">
+    <div class="header-text">
+        <h1>WebDevTeam Support</h1>
+        <h2>We provide a solution for all platforms</h2>
+    </div>
+    <nav class="website-navigation-bar">
+        <h3>Home</h3>
+        <h3>Our products</h3>
+        <h3>Our services</h3>
+        <h3>Meet our DevTeam</h3>
+        <h3>Prices</h3>
+        <h3>Contact Us</h3>
+    </nav>
+</header>
+
+<h2>Contact Us</h2>
+
+<h3>Contact Form :</h3>
+<p>
+    In case you need to be in touch with our developer team regarding any kind of matter, please fill in the formular.
+</p>
+
+<p> Please note that if your region is <abbr title="TRY">OUT</abbr> of the supported areas, we may not be able to help you.
+    <hr>
+
+    <strong> Usual examples of contact topics :</strong>
+    <ul>
+        <li>A bug has happened during your user experience.</li>
+        <li>You need help using the product we designed.</li>
+        <li>You need help with a product another company designed.</li>
+        <li>You would like us to custom tailor your products or design you one from scraps.</li>
+        <li>You wish to know about our others products.</li>
+    </ul>
+</p>
+
+<div class="container">
+    <form id="contactForm" action="validate.html">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." class="invalid-input" maxlength="50">
+        <div id="fnameError" class="error-message"></div>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." class="invalid-input" maxlength="50">
+        <div id="lnameError" class="error-message"></div>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your email.." class="invalid-input">
+        <div id="emailError" class="error-message"></div>
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+            <option value="france">France</option>
+            <option value="allemagne">Germany</option>
+            <option value="roumanie">Romania</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+        <div id="subjectError" class="error-message"></div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        const fnameInput = document.getElementById('fname');
+        const lnameInput = document.getElementById('lname');
+        const emailInput = document.getElementById('email');
+        const subjectInput = document.getElementById('subject');
+
+        if (!isValidInput(fnameInput.value, 3)) {
+            displayErrorMessage('fnameError', 'Please enter a valid first name with at least three characters.');
+            event.preventDefault();
+        } else {
+            hideErrorMessage('fnameError');
+        }
+
+        if (!isValidInput(lnameInput.value, 3)) {
+            displayErrorMessage('lnameError', 'Please enter a valid last name with at least three characters.');
+            event.preventDefault();
+        } else {
+            hideErrorMessage('lnameError');
+        }
+
+        if (!isValidEmail(emailInput.value)) {
+            displayErrorMessage('emailError', 'Please enter a valid email address.');
+            event.preventDefault();
+        } else {
+            hideErrorMessage('emailError');
+        }
+    });
+
+    function isValidInput(value, minLength) {
+        // Add your validation logic for names here
+        return value.trim().length >= minLength;
+    }
+
+    function isValidEmail(email) {
+        // More sophisticated email validation
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    function displayErrorMessage(id, message) {
+        const errorElement = document.getElementById(id);
+        errorElement.innerHTML = message;
+    }
+
+    function hideErrorMessage(id) {
+        const errorElement = document.getElementById(id);
+        errorElement.innerHTML = '';
+    }
+</script>
+
+
+<footer>
+    <img src="/ressources/image/test3.jpeg" type="footer picture" alt="footer picture representing a thank you written in every language on a post-it, each one held by a hand">
+    <div class="footer-text">
+        <h3>Simplon Dev since 2023</h3>
+        <dl>
+            <dt>From HTML to DOCKER and beyond</dt>
+            <dd>We got you <strong>Covered!</strong></dd>
+        </dl>
+        <dl>
+            <dt>We would like to thank everyone and wish you a Merry Christmas Eve!</dt>
+            <dd>Enjoy Snowmen, snowballs, Christmas Java dreams, and not to forget about the New Year <strong>Blog!</strong></dd>
+        </dl>
+        <p>&copy; 2023 Blind&Deaf. All rights reserved. SimplonTraining<small>™</small></p>
+    </div>
+    <div class="social-networks">
+        <a href="facebook">Social Network 1</a>
+        <a href="instagram">Social Network 2</a>
+    </div>
+</footer>
+
+</body>
+</html>
