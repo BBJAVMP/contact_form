@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '..', 'src')));
 
-app.use(express.static(path.join(__dirname, 'src', 'css')));
+app.use(express.static(path.join(__dirname, 'style', 'css')));
 
 app.use(express.urlencoded({ extended: true }));
 
