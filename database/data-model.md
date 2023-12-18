@@ -28,3 +28,11 @@ note for tickets "The pictures is a directory in server"
     +Datetime date_create
    }
 
+class contact{
+    +int id_contact(unique)*
+    +int id_user
+    +String title
+    +Text text_content_contact
+    +String picture
+    +Datetime date_create
+   }

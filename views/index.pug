@@ -1,0 +1,173 @@
+block styles
+  link(rel="stylesheet", type="text/css", href="/style/css/main.css")
+
+
+block content
+
+doctype html
+html(lang='en-US')
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='author', content='Test to build up HTML skills.')
+    |     
+    title Home
+    |     
+    link(rel='icon', href='/style/image/test.jpeg', type='image/test-icon')
+    |     
+    link(rel='stylesheet', href='/style/css/main.css', type='text/css')
+  body
+    header
+      img(src='/style/image/test2.jpeg', alt='testing if the image of customer service works', title='test', width='1300', height='300')
+      |     
+      .header-text
+        h1 WebDevTeam Support
+        |         
+        h2 We provide a solution for all platforms
+      |     
+      nav.website-navigation-bar
+        a(href='index.html')
+          h3 Home
+        |         
+        h3 Our products
+        |         
+        h3 Our services
+        |         
+        h3 Meet our DevTeam
+        |         
+        h3 Prices
+        |         
+        a(href='contact.html')
+          h3 Contact Us
+    h2 Contact Us
+    h3 Contact Form :
+    p
+      | In case you need to be in touch with our developer team regarding any kind of matter, please fill in the formular.
+    p
+      | Please note that if your region is 
+      abbr(title='TRY') OUT
+      |  of the supported areas, we may not be able to help you.
+    hr
+    |     
+    strong  Usual examples of contact topics :
+    |     
+    ul
+      li A bug has happened during your user experience.
+      |         
+      li You need help using the product we designed.
+      |         
+      li You need help with a product another company designed.
+      |         
+      li You would like us to custom tailor your products or design you one from scraps.
+      |         
+      li You wish to know about our others products.
+    p
+    .container
+      form#contactForm(action='validate.html')
+        label(for='fname') First Name
+        |         
+        input#fname.invalid-input(type='text', name='firstname', placeholder='Your name..', maxlength='50')
+        |         
+        #fnameError.error-message
+        |         
+        label(for='lname') Last Name
+        |         
+        input#lname.invalid-input(type='text', name='lastname', placeholder='Your last name..', maxlength='50')
+        |         
+        #lnameError.error-message
+        |         
+        label(for='email') Email
+        |         
+        input#email.invalid-input(type='text', name='email', placeholder='Your email..')
+        |         
+        #emailError.error-message
+        |         
+        label(for='country') Country
+        |         
+        select#country(name='country')
+          option(value='australia') Australia
+          |             
+          option(value='canada') Canada
+          |             
+          option(value='usa') USA
+          |             
+          option(value='france') France
+          |             
+          option(value='allemagne') Germany
+          |             
+          option(value='roumanie') Romania
+        |         
+        label(for='subject') Subject
+        |         
+        textarea#subject(name='subject', placeholder='Write something..', style='height:200px', required='')
+        |         
+        #subjectError.error-message
+        |         
+        input(type='submit', value='Submit')
+    script.
+      document.getElementById('contactForm').addEventListener('submit', function (event) {
+      const fnameInput = document.getElementById('fname');
+      const lnameInput = document.getElementById('lname');
+      const emailInput = document.getElementById('email');
+      const subjectInput = document.getElementById('subject');
+      if (!isValidInput(fnameInput.value, 3)) {
+      displayErrorMessage('fnameError', 'Please enter a valid first name with at least three characters.');
+      event.preventDefault();
+      } else {
+      hideErrorMessage('fnameError');
+      }
+      if (!isValidInput(lnameInput.value, 3)) {
+      displayErrorMessage('lnameError', 'Please enter a valid last name with at least three characters.');
+      event.preventDefault();
+      } else {
+      hideErrorMessage('lnameError');
+      }
+      if (!isValidEmail(emailInput.value)) {
+      displayErrorMessage('emailError', 'Please enter a valid email address.');
+      event.preventDefault();
+      } else {
+      hideErrorMessage('emailError');
+      }
+      });
+      function isValidInput(value, minLength) {
+      return value.trim().length >= minLength;
+      }
+      function isValidEmail(email) {
+      return /\\S+@\S+\.\S+/.test(email);
+      }
+      function displayErrorMessage(id, message) {
+      const errorElement = document.getElementById(id);
+      errorElement.innerHTML = message;
+      }
+      function hideErrorMessage(id) {
+      const errorElement = document.getElementById(id);
+      errorElement.innerHTML = '';
+      }
+    footer
+      img(src='/style/image/test3.jpeg', type='footer picture', alt='footer picture representing a thank you written in every language on a post-it, each one held by a hand')
+      |     
+      .footer-text
+        h3 Simplon Dev since 2023
+        |         
+        dl
+          dt From HTML to DOCKER and beyond
+          |             
+          dd
+            | We got you 
+            strong Covered!
+        |         
+        dl
+          dt We would like to thank everyone and wish you a Merry Christmas Eve!
+          |             
+          dd
+            | Enjoy Snowmen, snowballs, Christmas Java dreams, and not to forget about the New Year 
+            strong Blog!
+        |         
+        p
+          | &copy; 2023 Blind&amp;Deaf. All rights reserved. SimplonTraining
+          small &trade;
+      |     
+      .social-networks
+        a(href='facebook') Social Network 1
+        |         
+        a(href='instagram') Social Network 2

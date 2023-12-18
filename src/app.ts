@@ -3,16 +3,37 @@ import path from 'path';
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '..', 'src')));
 
-app.use(express.static(path.join(__dirname, 'style', 'css')));
+app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'src')));
+
+app.use(express.static(path.join(__dirname, 'dist', 'style')));
+app.use('/style', express.static(path.join(__dirname, 'dist', 'style')));
 
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+  res.render('home', { pageTitle: 'home' });
 });
+
+app.get('/', (req, res) => {
+  res.render('index', { pageTitle: 'Home' });
+});
+
+app.get('/', (req, res) => {
+  res.render('validate', { pageTitle: 'Validate' });
+});
+
+app.get('/', (req, res) => {
+  res.render('contact', { pageTitle: 'Contact Us' });
+});
+
+
+
 
 app.post('/submit', (req, res) => {
   const { firstname, lastname, email, country, subject } = req.body;
@@ -27,7 +48,7 @@ app.post('/submit', (req, res) => {
     return;
   }
 
- res.send('Form submitted successfully');
+  res.send('Form submitted successfully');
 });
 
 function isValidInput(value: string, maxLength: number): boolean {
@@ -37,3 +58,9 @@ function isValidInput(value: string, maxLength: number): boolean {
 function isValidEmail(email: string): boolean {
   return /\S+@\S+\.\S+/.test(email);
 }
+
+const port = 8000;
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
