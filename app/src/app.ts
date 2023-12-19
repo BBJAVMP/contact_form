@@ -9,9 +9,6 @@ app.use('/style', express.static(path.join(__dirname, 'dist', 'style')));
 app.use(express.static(path.join(__dirname, 'src')));
 app.use('/style', express.static(path.join(__dirname, 'style')));
 
-app.use('/style', express.static(path.join(__dirname, 'style')));
-
-
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
