@@ -11,6 +11,4 @@ node_modules/
 /venv2/
 /env2/
 
-
-/dist/
-
+/dist
